@@ -1,0 +1,1 @@
+# ispconfig-nextcloud-plugin
