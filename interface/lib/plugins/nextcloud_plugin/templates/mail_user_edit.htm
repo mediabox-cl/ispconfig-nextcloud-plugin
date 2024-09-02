@@ -1,0 +1,120 @@
+<div class="form-group">
+    <label for="nc_enabled" class="col-sm-3 control-label">
+        {tmpl_var name='nc_enabled_txt'}
+    </label>
+    <div class="col-sm-9">
+        {tmpl_var name='nc_enabled'}
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="nc_quota" class="col-sm-3 control-label">
+        {tmpl_var name='nc_quota_user_txt'}
+    </label>
+    <div class="col-sm-9">
+        <div class="input-group">
+            <input type="text" name="nc_quota" id="nc_quota" value="{tmpl_var name='nc_quota'}"
+                   class="form-control"/>
+            <span class="input-group-addon" id="quota-desc">MB</span>
+        </div>
+        <div class="text-muted" style="margin-top: 8px">
+            {tmpl_var name='nc_quota_user_desc_txt'}
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="nc_group" class="col-sm-3 control-label">
+        {tmpl_var name='nc_group_user_txt'}
+    </label>
+    <div class="col-sm-9">
+        <input type="text" name="nc_group" id="nc_group" value="{tmpl_var name='nc_group'}"
+               class="form-control"/>
+        <div class="text-muted" style="margin-top: 8px">
+            {tmpl_var name='nc_group_user_desc_txt'}
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="nc_adm_user" class="col-sm-3 control-label">
+        {tmpl_var name='nc_group_adm_user_txt'}
+    </label>
+    <div class="col-sm-9">
+        {tmpl_var name='nc_adm_user'}
+        <span class="text-muted">
+            {tmpl_var name='nc_group_adm_user_desc_txt'}
+        </span>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="nc_server" class="col-sm-3 control-label">
+        {tmpl_var name='nc_group_server_txt'}
+    </label>
+    <div class="col-sm-9">
+        {tmpl_var name='nc_server'}
+        <span class="text-muted">
+            {tmpl_var name='nc_group_user_server_desc_txt'}
+        </span>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="nc_adm_server" class="col-sm-3 control-label">
+        {tmpl_var name='nc_group_adm_server_txt'}
+    </label>
+    <div class="col-sm-9">
+        {tmpl_var name='nc_adm_server'}
+        <span class="text-muted">
+            {tmpl_var name='nc_group_adm_server_desc_txt'}
+        </span>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="nc_domain" class="col-sm-3 control-label">
+        {tmpl_var name='nc_group_domain_txt'}
+    </label>
+    <div class="col-sm-9">
+        {tmpl_var name='nc_domain'}
+        <span class="text-muted">
+            {tmpl_var name='nc_group_user_domain_desc_txt'}
+        </span>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="nc_adm_domain" class="col-sm-3 control-label">
+        {tmpl_var name='nc_group_adm_domain_txt'}
+    </label>
+    <div class="col-sm-9">
+        {tmpl_var name='nc_adm_domain'}
+        <span class="text-muted">
+            {tmpl_var name='nc_group_adm_domain_desc_txt'}
+        </span>
+    </div>
+</div>
+
+<input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+<div class="clear">
+    <tmpl_if name='id'>
+        <tmpl_if name='show_delete_on_forms' op="==" value="y">
+            <a class="btn btn-default formbutton-danger formbutton-narrow"
+               href="javascript: ISPConfig.confirm_action('mail/mail_user_del.php?id={tmpl_var name='id'}&_csrf_id={tmpl_var name='_csrf_id'}&_csrf_key={tmpl_var name='_csrf_key'}&phpsessid={tmpl_var name='phpsessid'}','{tmpl_var name='delete_confirmation'}');">
+                <span class="icon icon-delete"></span>
+            </a>
+        </tmpl_if>
+    </tmpl_if>
+    <div class="right">
+        <button class="btn btn-default formbutton-success" type="button" value="{tmpl_var name='btn_save_txt'}"
+                data-submit-form="pageForm" data-form-action="mail/mail_user_edit.php">
+            {tmpl_var name='btn_save_txt'}
+        </button>
+        <button class="btn btn-default formbutton-default" type="button" value="{tmpl_var name='btn_cancel_txt'}"
+                data-load-content="mail/mail_user_list.php">
+            {tmpl_var name='btn_cancel_txt'}
+        </button>
+    </div>
+</div>

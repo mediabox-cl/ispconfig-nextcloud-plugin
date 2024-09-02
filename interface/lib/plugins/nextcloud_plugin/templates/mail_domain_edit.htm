@@ -1,0 +1,83 @@
+<div class="form-group">
+    <label for="nc_enabled" class="col-sm-3 control-label">
+        {tmpl_var name='nc_enabled_txt'}
+    </label>
+    <div class="col-sm-9">
+        {tmpl_var name='nc_enabled'}
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="nc_quota" class="col-sm-3 control-label">
+        {tmpl_var name='nc_quota_domain_txt'}
+    </label>
+    <div class="col-sm-9">
+        <div class="input-group">
+            <input type="text" name="nc_quota" id="nc_quota" value="{tmpl_var name='nc_quota'}"
+                   class="form-control"/>
+            <span class="input-group-addon" id="quota-desc">MB</span>
+        </div>
+        <div class="text-muted" style="margin-top: 8px">
+            {tmpl_var name='nc_quota_domain_desc_txt'}
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="nc_group" class="col-sm-3 control-label">
+        {tmpl_var name='nc_group_domain_txt'}
+    </label>
+    <div class="col-sm-9">
+        <input type="text" name="nc_group" id="nc_group" value="{tmpl_var name='nc_group'}"
+               class="form-control"/>
+        <div class="text-muted" style="margin-top: 8px">
+            {tmpl_var name='nc_group_domain_desc_txt'}
+        </div>
+    </div>
+</div>
+
+<input type="hidden" name="id" value="{tmpl_var name='id'}">
+<input type="hidden" name="type" value="local">
+
+<tmpl_if name='server_value' op="!=" value="">
+    <input type="hidden" name="server_id" value="{tmpl_var name='server_value'}"/>
+</tmpl_if>
+<tmpl_if name='domain_value' op="!=" value="">
+    <input type="hidden" name="domain" value="{tmpl_var name='domain_value'}"/>
+</tmpl_if>
+<tmpl_if name='policy_value' op="!=" value="">
+    <input type="hidden" name="policy" value="{tmpl_var name='policy_value'}"/>
+</tmpl_if>
+<tmpl_if name='dkim_private_value' op="!=" value="">
+    <input type="hidden" name="dkim_private" value="{tmpl_var name='dkim_private_value'}"/>
+</tmpl_if>
+<tmpl_if name='dkim_public_value' op="!=" value="">
+    <input type="hidden" name="dkim_public" value="{tmpl_var name='dkim_public_value'}"/>
+</tmpl_if>
+<tmpl_if name='dkim_selector_value' op="!=" value="">
+    <input type="hidden" name="dkim_selector" value="{tmpl_var name='dkim_selector_value'}"/>
+</tmpl_if>
+<tmpl_if name='dns_record_value' op="!=" value="">
+    <input type="hidden" name="dns_record" value="{tmpl_var name='dns_record_value'}"/>
+</tmpl_if>
+
+<div class="clear">
+    <tmpl_if name='id'>
+        <tmpl_if name='show_delete_on_forms' op="==" value="y">
+            <a class="btn btn-default formbutton-danger formbutton-narrow"
+               href="javascript: ISPConfig.confirm_action('mail/mail_domain_del.php?id={tmpl_var name='id'}&_csrf_id={tmpl_var name='_csrf_id'}&_csrf_key={tmpl_var name='_csrf_key'}&phpsessid={tmpl_var name='phpsessid'}','{tmpl_var name='delete_confirmation'}');">
+                <span class="icon icon-delete"></span>
+            </a>
+        </tmpl_if>
+    </tmpl_if>
+    <div class="right">
+        <button class="btn btn-default formbutton-success" type="button" value="{tmpl_var name='btn_save_txt'}"
+                data-submit-form="pageForm" data-form-action="mail/mail_domain_edit.php">
+            {tmpl_var name='btn_save_txt'}
+        </button>
+        <button class="btn btn-default formbutton-default" type="button" value="{tmpl_var name='btn_cancel_txt'}"
+                data-load-content="mail/mail_domain_list.php">
+            {tmpl_var name='btn_cancel_txt'}
+        </button>
+    </div>
+</div>
