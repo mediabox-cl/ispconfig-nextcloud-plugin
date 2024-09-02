@@ -48,10 +48,11 @@ Login to your server and clone this repository:
 cd /tmp
 git clone https://github.com/mediabox-cl/ispconfig-nextcloud-plugin.git
 cd ispconfig-nextcloud-plugin
-mv interface /usr/local/ispconfig
-mv server /usr/local/ispconfig
+cp -R interface /usr/local/ispconfig
+cp -R server /usr/local/ispconfig
 cd /usr/local/ispconfig/server/plugins-enabled
 ln -s /usr/local/ispconfig/server/plugins-available/nextcloud_plugin.inc.php nextcloud_plugin.inc.php
+rm -rf /tmp/ispconfig-nextcloud-plugin
 ```
 
 Logout from your **ISPConfig 3** Control Panel and login again. **You must do this!**  
