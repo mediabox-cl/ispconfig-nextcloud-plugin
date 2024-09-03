@@ -53,6 +53,7 @@ git clone https://github.com/mediabox-cl/ispconfig-nextcloud-plugin.git
 cd ispconfig-nextcloud-plugin
 cp -R interface /usr/local/ispconfig
 cp -R server /usr/local/ispconfig
+chown -R ispconfig:ispconfig /usr/local/ispconfig/interface/lib
 cd /usr/local/ispconfig/server/plugins-enabled
 ln -s /usr/local/ispconfig/server/plugins-available/nextcloud_plugin.inc.php nextcloud_plugin.inc.php
 rm -rf /tmp/ispconfig-nextcloud-plugin
