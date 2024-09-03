@@ -7,15 +7,17 @@ Allows users to log in to **Nextcloud** with their email or custom login name cr
 ## Features
 
 This plugin has three places where you can configure different functionalities or integrations with **Nextcloud**.
+
 - `System > Server Config > Your Server Name > Nextcloud (TAB)`
 - `Email > Domain > Your Domain Name > Nextcloud (TAB)`
 - `Email > Email Mailbox > Your Mailbox Name > Nextcloud (TAB)`
 
 ### Users
+
+- Users can change their **ISPConfig** password and display name in the **Nextcloud** interface.
 - Delete the **Nextcloud** user account and data when the **ISPConfig** Mailbox User or Domain is deleted.
-- Enable/Disable login by user or domain
-- Default quota for users in the domain.
-- Specific quota for users.
+- Enable/Disable login by user or domain.
+- You can define the user quota per domain or per user.
 - ...
 
 ### Groups
@@ -39,6 +41,7 @@ Installation in **ISPConfig** is a bit tricky because this control panel, despit
 - You must log in to your **phpMyAdmin** (easier) and give the `ALTER` privilege to the "ispconfig" user in the "dbispconfig" database before you install this plugin.
 
 _Notes:_
+
 - _After finishing the installation of the plugin you can disable the `ALTER` privilege._
 - _"dbispconfig" and "ispconfig" are the default database and database user for **ISPConfig**. You may have another one if you changed it during installation._
 
