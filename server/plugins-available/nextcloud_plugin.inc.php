@@ -209,9 +209,9 @@ class nextcloud_plugin
      * @param string $method
      * @param array $headers
      *
-     * @return false|array
+     * @return array
      */
-    private function call(string $method, array $headers): false|array
+    private function call(string $method, array $headers): array
     {
         $url = rtrim($this->nc_url, '/') . '/' . $this->nc_path;
         $ch = curl_init($url);
