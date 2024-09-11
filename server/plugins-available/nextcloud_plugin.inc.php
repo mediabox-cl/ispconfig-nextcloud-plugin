@@ -255,9 +255,10 @@ class nextcloud_plugin
             // load the server specific configuration options for nextcloud
             $app->uses('getconf');
             $nc_config = $app->getconf->get_server_config($conf['server_id'], 'nextcloud');
+            $this->nc_enabled = is_array($nc_config) && isset($nc_config['nc_enabled']) && $nc_config['nc_enabled'] == 'y';
 
             if (
-                is_array($nc_config) &&
+                $this->nc_enabled &&
                 isset($nc_config['nc_account']) &&
                 $nc_config['nc_account'] == 'y' &&
                 isset($nc_config['nc_url']) &&
@@ -270,9 +271,6 @@ class nextcloud_plugin
                 $this->nc_url = $nc_config['nc_url'];
                 $this->nc_user = $nc_config['nc_user'];
                 $this->nc_password = $nc_config['nc_password'];
-                $this->nc_enabled = true;
-            } else {
-                $this->nc_enabled = false;
             }
         }
     }

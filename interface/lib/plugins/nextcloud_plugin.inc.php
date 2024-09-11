@@ -191,6 +191,15 @@ class nextcloud_plugin
                 'width' => 100,
                 'template' => $this->plugin_dir . '/templates/server_config_edit.htm',
                 'fields' => array(
+                    'nc_enabled' => array(
+                        'datatype' => 'VARCHAR',
+                        'formtype' => 'CHECKBOX',
+                        'default' => 'n',
+                        'value' => array(
+                            1 => 'y',
+                            0 => 'n'
+                        )
+                    ),
                     'nc_account' => array(
                         'datatype' => 'VARCHAR',
                         'formtype' => 'CHECKBOX',
