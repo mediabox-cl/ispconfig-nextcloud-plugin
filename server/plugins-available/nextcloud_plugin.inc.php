@@ -271,6 +271,8 @@ class nextcloud_plugin
                 $this->nc_url = $nc_config['nc_url'];
                 $this->nc_user = $nc_config['nc_user'];
                 $this->nc_password = $nc_config['nc_password'];
+            } else {
+                $this->nc_enabled = false;
             }
         }
     }
